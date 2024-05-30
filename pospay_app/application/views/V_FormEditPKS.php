@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Welcome to PosPay</title>
+    <title>Edit Data PKS</title>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style.css'); ?>">
     <style>
         body {
@@ -11,7 +11,7 @@
             padding: 0;
         }
         .navbar {
-            background-color: orange; /* Warna orange khas kantor pos */
+            background-color: orange; 
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -54,6 +54,30 @@
             text-align: center;
             margin-top: 50px;
         }
+        .form-background {
+            background-color: #ff8800; /* Warna orange khas kantor pos */
+            padding: 30px;
+            border-radius: 10px;
+            width: 340px; /* Lebar lebih besar dari form */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+        }
+        .form-container {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .form-container form {
+            width: 100%;
+        }
+        .form-container input, .form-container button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
         .button {
             background-color: orange; /* Warna orange khas kantor pos */
             border: none;
@@ -63,33 +87,10 @@
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
-            margin: 4px 2px;
             cursor: pointer;
-            border-radius: 10px; /* Menambahkan radius sudut */
-            margin-bottom: 20px; /* Menambahkan jarak dari tombol ke iframe */
-        }
-        table {
-            width: 80%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: orange; /* Warna orange khas kantor pos */
-            color: white;
-        }
-        .action-button {
-            background-color: orange;
-            color: white;
-            padding: 5px 10px;
-            text-decoration: none;
-            border-radius: 5px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            width: 100%; /* Lebar tombol submit sama dengan lebar form */
         }
     </style>
 </head>
@@ -103,28 +104,21 @@
         </ul>
     </div>
     <div id="container">
-        <h1>Data PKS</h1>
-        <a href="<?php echo site_url('C_DataPKS/formAddDataPKS');?>" class="button">Tambah Data PKS</a>
-        <table>
-            <tr>
-                <th>No</th>
-                <th>PIC</th>
-                <th>PKS</th>
-                <th>Tanggal Habis</th>
-                <th>Aksi</th>
-            </tr>
-            <?php 
-            $no = 1;
-            foreach ($data_pks as $row) { ?>
-                <tr>
-                    <td><?php echo $no++; ?></td>
-                    <td><?php echo $row->pic; ?></td>
-                    <td><?php echo $row->pks; ?></td>
-                    <td><?php echo $row->tanggal_habis; ?></td>
-                    <td><a href="<?php echo site_url('C_DataPKS/formUpdateDataPKS/'.$row->id);?>" class="action-button">Ubah Data</a></td>
-                </tr>
-            <?php } ?>
-        </table>
+        <h1>Edit Data PKS</h1>
+        <div class="form-background">
+            <div class="form-container">
+                <form action="<?php echo site_url('C_DataPKS/updateDataPKS'); ?>" method="post">
+                    <input type="hidden" name="id" value="<?php echo $pks->id; ?>">
+                    <h3>PIC</h3>
+                    <input type="text" name="pic" placeholder="Masukkan Nama PIC" value="<?php echo $pks->pic; ?>" required>
+                    <h3>PKS</h3>
+                    <input type="text" name="pks" placeholder="Masukkan Nama PKS" value="<?php echo $pks->pks; ?>" required>
+                    <h3>Tanggal Habis</h3>
+                    <input type="date" name="tanggal_habis" placeholder="Tanggal Habis" value="<?php echo $pks->tanggal_habis; ?>" required>
+                    <button type="submit" class="button">Update</button>
+                </form>
+            </div>
+        </div>
     </div>
 </body>
 </html>

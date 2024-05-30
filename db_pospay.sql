@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Bulan Mei 2024 pada 20.57
--- Versi server: 10.4.27-MariaDB
--- Versi PHP: 8.2.0
+-- Generation Time: May 31, 2024 at 01:48 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `filepks`
+-- Table structure for table `filepks`
 --
 
 CREATE TABLE `filepks` (
@@ -36,7 +36,28 @@ CREATE TABLE `filepks` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `t_pks`
+--
+
+CREATE TABLE `t_pks` (
+  `id` int(11) NOT NULL,
+  `pic` varchar(255) NOT NULL,
+  `pks` varchar(255) NOT NULL,
+  `tanggal_habis` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `t_pks`
+--
+
+INSERT INTO `t_pks` (`id`, `pic`, `pks`, `tanggal_habis`) VALUES
+(1, 'Robby', 'IMFI (SYB)', '2021-06-21'),
+(2, 'Robby', 'PT Pos Finansial Indonesia', '2022-01-01');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -48,7 +69,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `nama_lengkap`, `id_role`) VALUES
@@ -60,29 +81,41 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `nama_lengkap`, `id_role`
 --
 
 --
--- Indeks untuk tabel `filepks`
+-- Indexes for table `filepks`
 --
 ALTER TABLE `filepks`
   ADD PRIMARY KEY (`id_filepks`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `t_pks`
+--
+ALTER TABLE `t_pks`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `filepks`
+-- AUTO_INCREMENT for table `filepks`
 --
 ALTER TABLE `filepks`
   MODIFY `id_filepks` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `t_pks`
+--
+ALTER TABLE `t_pks`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;

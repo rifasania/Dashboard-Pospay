@@ -107,7 +107,7 @@
         <h1>Tambah Data PKS</h1>
         <div class="form-background">
             <div class="form-container">
-                <form action="<?php echo site_url('C_DataPKS/tambah'); ?>" method="post">
+                <form action="<?php echo site_url('C_DataPKS/addDataPKS'); ?>" method="post">
                     <h3>PIC</h3>
                     <input type="text" name="pic" placeholder="Masukkan Nama PIC" required>
                     <h3>PKS</h3>
