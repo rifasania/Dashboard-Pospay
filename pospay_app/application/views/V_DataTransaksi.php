@@ -49,10 +49,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }
         #container {
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
         }
         h1 {
             text-align: center;
             margin-top: 50px;
+        }
+        .button {
+            background-color: orange;
+            border: none;
+            color: white;
+            padding: 15px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 10px; /* Menambahkan radius sudut */
+            margin-bottom: 20px; /* Menambahkan jarak dari tombol ke iframe */
         }
     </style>
 </head>
@@ -66,7 +85,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </ul>
     </div>
     <div id="container">
-        <h1>Welcome to PosPay</h1>
+        <h1>Data Transaksi</h1>
+        <a href="<?php echo site_url('');?>" class="button">Tambah Data Transaksi</a>
+        <iframe width="1200" height="1080" src="https://lookerstudio.google.com/embed/reporting/9b2ba553-a178-4dd8-a895-185f2dae0742/page/B8k0D" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
     </div>
 </body>
 </html>
