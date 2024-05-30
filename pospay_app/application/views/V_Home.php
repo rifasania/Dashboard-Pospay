@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             overflow: hidden;
             display: flex;
             align-items: center;
-            height: 70px; /* Tinggi navbar yang lebih tinggi */
+            height: 90px; /* Tinggi navbar yang lebih tinggi */
         }
         .navbar ul {
             list-style-type: none;
@@ -34,9 +34,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             display: block;
             color: white;
             text-align: center;
-            padding: 20px 20px; /* Padding lebih besar untuk membuat navbar lebih tinggi */
+            padding: 25px 20px; /* Padding lebih besar untuk membuat navbar lebih tinggi */
             text-decoration: none;
-            line-height: 30px; /* Menjaga teks tetap di tengah secara vertikal */
+            line-height: 40px; /* Menjaga teks tetap di tengah secara vertikal */
+            font-size: 20px;
         }
         .navbar li a:hover {
             background-color: #ddd;
@@ -44,7 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }
         .navbar .logo {
             display: block;
-            padding: 15px 10px; /* Menyesuaikan padding untuk logo */
+            padding: 15px 25px; /* Menyesuaikan padding untuk logo */
         }
         #container {
             padding: 20px;
@@ -57,7 +58,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
     <div class="navbar">
-        <a href="<?php echo site_url(); ?>" class="logo"><img src="<?php echo base_url('assets/img/pospay.png'); ?>" alt="PosPay Logo" height="40"></a>
+    <span class="logo"><img src="<?php echo base_url('assets/img/pospay.png'); ?>" alt="PosPay Logo" height="60"></span>
         <ul>
             <li><a href="<?php echo site_url('transaksi'); ?>">Data Transaksi</a></li>
             <li><a href="<?php echo site_url('pks'); ?>">Data PKS</a></li>
