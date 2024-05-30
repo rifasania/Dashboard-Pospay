@@ -11,7 +11,7 @@
             padding: 0;
         }
         .navbar {
-            background-color: #ff8800; /* Warna orange khas kantor pos */
+            background-color: orange; 
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -79,7 +79,7 @@
             border-radius: 5px;
         }
         .button {
-            background-color: #ff8800; /* Warna orange khas kantor pos */
+            background-color: orange; /* Warna orange khas kantor pos */
             border: none;
             color: white;
             padding: 15px 25px;
