@@ -1,6 +1,3 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,8 +49,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
         }
         h1 {
             text-align: center;
@@ -77,7 +72,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
     <div class="navbar">
-    <span class="logo"><img src="<?php echo base_url('assets/img/pospay.png'); ?>" alt="PosPay Logo" height="60"></span>
+        <span class="logo"><img src="<?php echo base_url('assets/img/pospay.png'); ?>" alt="PosPay Logo" height="60"></span>
         <ul>
             <li><a href="<?php echo site_url('C_Home/index');?>">Home</a></li>
             <li><a href="<?php echo site_url('C_DataTransaksi/index');?>">Data Transaksi</a></li>
@@ -85,9 +80,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </ul>
     </div>
     <div id="container">
-        <h1>Data Transaksi</h1>
-        <a href="<?php echo site_url('');?>" class="button">Tambah Data Transaksi</a>
-        <iframe width="1200" height="1080" src="https://lookerstudio.google.com/embed/reporting/9b2ba553-a178-4dd8-a895-185f2dae0742/page/B8k0D" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+        <h1>Data PKS</h1>
+        <a href="<?php echo site_url('C_DataPKS/addDataPKS');?>" class="button">Tambah Data PKS</a>
+		
     </div>
 </body>
 </html>
