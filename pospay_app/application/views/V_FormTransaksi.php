@@ -1,6 +1,3 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,11 +11,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             padding: 0;
         }
         .navbar {
-            background-color: orange;
+            background-color: orange; 
             overflow: hidden;
             display: flex;
             align-items: center;
-            height: 75px; /* Tinggi navbar yang lebih tinggi */
+            height: 75px;
         }
         .navbar ul {
             list-style-type: none;
@@ -34,9 +31,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             display: block;
             color: white;
             text-align: center;
-            padding: 25px 20px; /* Padding lebih besar untuk membuat navbar lebih tinggi */
+            padding: 25px 20px;
             text-decoration: none;
-            line-height: 40px; /* Menjaga teks tetap di tengah secara vertikal */
+            line-height: 40px;
             font-size: 18px;
         }
         .navbar li a:hover {
@@ -45,22 +42,44 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }
         .navbar .logo {
             display: block;
-            padding: 15px 25px; /* Menyesuaikan padding untuk logo */
+            padding: 15px 25px;
         }
         #container {
             padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
         }
         h1 {
             text-align: center;
             margin-top: 50px;
         }
+        .form-background {
+            background-color: #ff8800; /* Warna orange khas kantor pos */
+            padding: 30px;
+            border-radius: 10px;
+            width: 340px; /* Lebar lebih besar dari form */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+        }
+        .form-container {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .form-container form {
+            width: 100%;
+        }
+        .form-container input, .form-container button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
         .button {
-            background-color: orange;
+            background-color: orange; /* Warna orange khas kantor pos */
             border: none;
             color: white;
             padding: 15px 25px;
@@ -68,16 +87,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
-            margin: 4px 2px;
             cursor: pointer;
-            border-radius: 10px; /* Menambahkan radius sudut */
-            margin-bottom: 20px; /* Menambahkan jarak dari tombol ke iframe */
+            border-radius: 10px;
+            margin-bottom: 20px;
+            width: 100%; /* Lebar tombol submit sama dengan lebar form */
         }
     </style>
 </head>
 <body>
     <div class="navbar">
-    <span class="logo"><img src="<?php echo base_url('assets/img/pospay.png'); ?>" alt="PosPay Logo" height="60"></span>
+        <span class="logo"><img src="<?php echo base_url('assets/img/pospay.png'); ?>" alt="PosPay Logo" height="60"></span>
         <ul>
             <li><a href="<?php echo site_url('C_Home/index');?>">Home</a></li>
             <li><a href="<?php echo site_url('C_DataTransaksi/index');?>">Data Transaksi</a></li>
@@ -85,9 +104,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </ul>
     </div>
     <div id="container">
-        <h1>Data Transaksi</h1>
-        <a href="<?php echo site_url('C_DataTransaksi/formAddDataTransaksi');?>" class="button">Tambah Data Transaksi</a>
-        <iframe width="1200" height="1080" src="https://lookerstudio.google.com/embed/reporting/9b2ba553-a178-4dd8-a895-185f2dae0742/page/B8k0D" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+        <h1>Tambah Data Transaksi</h1>
+        <div class="form-background">
+            <div class="form-container">
+                <form action="<?php echo site_url('C_DataTransaksi/aksiAddDataTransaksi'); ?>" method="post" enctype="multipart/form-data">                    
+                    <h3>Tanggal</h3>
+                    <input type="date" name="tanggal_insert" required>
+                    <h3>File Excel</h3>
+                    <input type="file" name="nama_file" required>
+                    <button type="submit" class="button">Submit</button>
+                </form>
+            </div>
+        </div>
     </div>
 </body>
 </html>

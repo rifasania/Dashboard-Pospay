@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Bulan Mei 2024 pada 10.33
+-- Waktu pembuatan: 30 Bulan Mei 2024 pada 20.57
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.2.0
 
@@ -20,6 +20,18 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_pospay`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `filepks`
+--
+
+CREATE TABLE `filepks` (
+  `id_filepks` int(11) NOT NULL,
+  `tanggal_insert` date NOT NULL,
+  `nama_file` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -48,6 +60,12 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `nama_lengkap`, `id_role`
 --
 
 --
+-- Indeks untuk tabel `filepks`
+--
+ALTER TABLE `filepks`
+  ADD PRIMARY KEY (`id_filepks`);
+
+--
 -- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
@@ -56,6 +74,12 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
+
+--
+-- AUTO_INCREMENT untuk tabel `filepks`
+--
+ALTER TABLE `filepks`
+  MODIFY `id_filepks` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
