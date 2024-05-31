@@ -45,6 +45,9 @@
                 background-color: #ddd;
                 color: black;
             }
+            .navbar li.logout {
+                float: right; /* Membuat tombol logout berada di sebelah kanan */
+            }
             .navbar .logo {
                 display: block;
                 padding: 15px 25px; /* Menyesuaikan padding untuk logo */
@@ -144,23 +147,24 @@
                 <li><a href="<?php echo site_url('C_Home/index');?>">Home</a></li>
                 <li><a href="<?php echo site_url('C_DataTransaksi/index');?>">Data Transaksi</a></li>
                 <li><a href="<?php echo site_url('C_DataPKS/index'); ?>">Data PKS</a></li>
+                <li class="logout"><a href="<?php echo site_url('C_Login/logout'); ?>">Logout</a></li>
             </ul>
         </div>
         <div id="container">
             <h1>SELAMAT DATANG</h1>
             <div class="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item" style="background-image: url('<?php echo base_url('assets/img/slide1.jpg'); ?>'); background-blur: 5px;">
+                    <div class="carousel-item">
                         <h2>DASHBOARD SISTEM MONITORING DATA PRODUKSI POSPAY</h2>
                         <h2>DAN</h2>
                         <h2>DATA PKS</h2>
                     </div>
-                    <div class="carousel-item" style="background-image: url('<?php echo base_url('assets/img/slide2.jpg'); ?>'); background-blur: 5px;">
+                    <div class="carousel-item">
                         <h2>Tambah Transaksi</h2>
                         <p>Mulai tambah transaksi dengan klik tombol di bawah ini.</p>
                         <button class="carousel-button" onclick="window.location.href='<?php echo site_url('C_DataTransaksi/formAddDataTransaksi');?>'">Tambah Transaksi</button>
                     </div>
-                    <div class="carousel-item" style="background-image: url('<?php echo base_url('assets/img/slide3.jpg'); ?>'); background-blur: 5px;">
+                    <div class="carousel-item">
                         <h2>Tambah Data PKS</h2>
                         <p>Mulai tambah data PKS dengan klik tombol di bawah ini.</p>
                         <button class="carousel-button" onclick="window.location.href='<?php echo site_url('C_DataPKS/formAddDataPKS'); ?>'">Tambah Data PKS</button>

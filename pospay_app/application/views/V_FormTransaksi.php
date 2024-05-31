@@ -111,6 +111,7 @@
             <li><a href="<?php echo site_url('C_Home/index');?>">Home</a></li>
             <li><a href="<?php echo site_url('C_DataTransaksi/index');?>">Data Transaksi</a></li>
             <li><a href="<?php echo site_url('C_DataPKS/index'); ?>">Data PKS</a></li>
+            <li><a href="<?php echo site_url('C_Login/logout'); ?>">Logout</a></li>
         </ul>
     </div>
     <div id="container">

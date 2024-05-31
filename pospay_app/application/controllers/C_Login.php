@@ -35,36 +35,12 @@ class C_Login extends CI_Controller {
 		$this->M_Login->getDataLogin($username, $password);
 	}
 
-	// public function LinkRegister() 
-	// {
-	// 	$this->load->view('V_Register.php');
-	// }
 	
-	// public function InsertRegister(){
-	// 	$nama_user = $this->input->post('nama_user');
-	// 	$no_telp_user = $this->input->post('no_telp_user');
-	// 	$email_user = $this->input->post('email_user');
-	// 	$usn_user = $this->input->post('usn_user');
-	// 	$pass_user = $this->input->post('pass_user');
-    //     $id_role = $this->input->post('id_role');
-
-	// 	$DataRegister = array (
-	// 		'nama_user' => $nama_user, 
-	// 		'no_telp_user' => $no_telp_user,
-	// 		'email_user' => $email_user,
-	// 		'usn_user' => $usn_user,
-	// 		'pass_user' => $pass_user,
-    //         'id_role' => $id_role,
-	// 	);
-
-	// 	$this->M_Register->InsertDataRegister($DataRegister);
-	// }
-
-    // public function logout() {
-    //     $this->session->set_userdata('usn_user', FALSE);
-    //     $this->session->sess_destroy();
-    //     redirect(site_url('C_Login/index'));
-    // }
+    public function logout() {
+        $this->session->set_userdata('username', FALSE);
+        $this->session->sess_destroy();
+        redirect(site_url('C_Login/index'));
+    }
 	
 }
 

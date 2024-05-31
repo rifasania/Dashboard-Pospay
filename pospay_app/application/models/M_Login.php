@@ -21,9 +21,9 @@ class M_Login extends CI_Model {
                 if($row->id_role == 1) {
                     redirect('C_Home/index');
                 } 
-                // else if($row->id_role == 2) {
-                //     redirect('C_Admin/index');
-                // }
+                else if($row->id_role == 2) {
+                    redirect('C_Home/index');
+                }
             }
             
         }
