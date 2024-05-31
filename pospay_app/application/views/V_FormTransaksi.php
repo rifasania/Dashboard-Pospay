@@ -59,10 +59,10 @@
             margin-top: 50px;
         }
         .form-background {
-            background-color: #ff6600; /* Warna orange khas kantor pos dengan transparansi */
+            background-color: #ff6600; 
             padding: 30px;
             border-radius: 10px;
-            width: 340px; /* Lebar lebih besar dari form */
+            width: 340px; 
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             display: flex;
             justify-content: center;
@@ -76,25 +76,31 @@
         .form-container form {
             width: 100%;
         }
-        .form-container input, .form-container button {
+        .form-container input[type="date"],
+        .form-container input[type="file"] {
             width: 100%;
             padding: 10px;
             margin: 5px 0;
             border-radius: 5px;
+            border: 1px solid #ccc; 
+        }
+        .form-container input[type="file"] {
+            background-color: white; 
         }
         .button {
-            background-color: orange; /* Warna orange khas kantor pos */
+            background-color: orange;
             border: none;
             color: white;
-            padding: 15px 25px;
+            padding: 10px; 
             text-align: center;
             text-decoration: none;
-            display: inline-block;
+            display: block;
+            width: 107%; 
             font-size: 16px;
             cursor: pointer;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            width: 100%; /* Lebar tombol submit sama dengan lebar form */
+            border-radius: 5px;
+            margin: 5px 0; 
+            box-sizing: border-box; 
         }
     </style>
 </head>
