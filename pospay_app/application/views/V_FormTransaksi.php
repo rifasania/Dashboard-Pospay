@@ -1,11 +1,16 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Welcome to PosPay</title>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style.css'); ?>">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Data Transaksi</title>
     <style>
         body {
+            background-color: #f8f9fa;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -54,43 +59,49 @@
             text-align: center;
             margin-top: 50px;
         }
-        .form-background {
-            background-color: #ff8800; /* Warna orange khas kantor pos */
+        .form-container {
+            background-color: #ff8800;
             padding: 30px;
             border-radius: 10px;
-            width: 340px; /* Lebar lebih besar dari form */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: center;
-        }
-        .form-container {
             width: 300px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            text-align: center;
+            margin-top: 25px;
         }
-        .form-container form {
-            width: 100%;
+        .form-container h2 {
+            margin-bottom: 20px;
         }
-        .form-container input, .form-container button {
+        .form-container h2 img {
+            display: block;
+            margin: 0 auto 10px;
+            height: 80px; /* Adjust the height as needed */
+        }
+        .form-container label {
+            display: block;
+            text-align: left;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .form-container input,
+        .form-container button {
             width: 100%;
             padding: 10px;
-            margin: 5px 0;
+            margin: 10px 0;
+            border: 1px solid black;
             border-radius: 5px;
+            box-sizing: border-box; /* Ensures padding is included in the width */
         }
-        .button {
-            background-color: orange; /* Warna orange khas kantor pos */
+        .form-container button {
+            background-color: orange; /* Orange color */
             border: none;
             color: white;
-            padding: 15px 25px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
             font-size: 16px;
             cursor: pointer;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            width: 100%; /* Lebar tombol submit sama dengan lebar form */
+            margin-top: 25px;
+            display: inline-block;
+        }
+        .form-container button:hover {
+            background-color: #e65c00; /* Darker shade of orange for hover effect */
         }
     </style>
 </head>
@@ -104,17 +115,15 @@
         </ul>
     </div>
     <div id="container">
-        <h1>Tambah Data Transaksi</h1>
-        <div class="form-background">
-            <div class="form-container">
-                <form action="<?php echo site_url('C_DataTransaksi/aksiAddDataTransaksi'); ?>" method="post" enctype="multipart/form-data">                    
-                    <h3>Tanggal</h3>
-                    <input type="date" name="tanggal_insert" required>
-                    <h3>File Excel</h3>
-                    <input type="file" name="nama_file" required>
-                    <button type="submit" class="button">Submit</button>
-                </form>
-            </div>
+        <h1>Tambah Data PKS</h1>
+        <div class="form-container">            
+            <form action="<?php echo site_url('C_DataTransaksi/aksiAddDataTransaksi'); ?>" method="post" enctype="multipart/form-data">
+                <label for="tanggal_insert">Tanggal:</label>
+                <input type="date" id="tanggal_insert" name="tanggal_insert" placeholder="Tanggal" required>                
+                <label for="nama_file">File:</label>
+                <input type="file" id="nama_file" name="nama_file" required>
+                <button type="submit" class="button">Submit</button>
+            </form>
         </div>
     </div>
 </body>
