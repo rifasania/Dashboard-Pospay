@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 31, 2024 at 01:48 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Waktu pembuatan: 31 Bulan Mei 2024 pada 03.36
+-- Versi server: 10.4.27-MariaDB
+-- Versi PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,19 +24,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `filepks`
+-- Struktur dari tabel `file_transaksi`
 --
 
-CREATE TABLE `filepks` (
-  `id_filepks` int(11) NOT NULL,
+CREATE TABLE `file_transaksi` (
+  `id_file` int(11) NOT NULL,
   `tanggal_insert` date NOT NULL,
   `nama_file` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data untuk tabel `file_transaksi`
+--
+
+INSERT INTO `file_transaksi` (`id_file`, `tanggal_insert`, `nama_file`) VALUES
+(4, '2024-05-31', '20240430_wilpos.xls');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_pks`
+-- Struktur dari tabel `t_pks`
 --
 
 CREATE TABLE `t_pks` (
@@ -47,7 +54,7 @@ CREATE TABLE `t_pks` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `t_pks`
+-- Dumping data untuk tabel `t_pks`
 --
 
 INSERT INTO `t_pks` (`id`, `pic`, `pks`, `tanggal_habis`) VALUES
@@ -57,7 +64,7 @@ INSERT INTO `t_pks` (`id`, `pic`, `pks`, `tanggal_habis`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -69,7 +76,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `nama_lengkap`, `id_role`) VALUES
@@ -81,41 +88,41 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `nama_lengkap`, `id_role`
 --
 
 --
--- Indexes for table `filepks`
+-- Indeks untuk tabel `file_transaksi`
 --
-ALTER TABLE `filepks`
-  ADD PRIMARY KEY (`id_filepks`);
+ALTER TABLE `file_transaksi`
+  ADD PRIMARY KEY (`id_file`);
 
 --
--- Indexes for table `t_pks`
+-- Indeks untuk tabel `t_pks`
 --
 ALTER TABLE `t_pks`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `filepks`
+-- AUTO_INCREMENT untuk tabel `file_transaksi`
 --
-ALTER TABLE `filepks`
-  MODIFY `id_filepks` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `file_transaksi`
+  MODIFY `id_file` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `t_pks`
+-- AUTO_INCREMENT untuk tabel `t_pks`
 --
 ALTER TABLE `t_pks`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
