@@ -9,11 +9,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Data Transaksi</title>
     <style>
+		html, body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
         body {
             background-color: #f8f9fa;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-image: url('<?php echo base_url('assets/img/background.png'); ?>');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         .navbar {
             background-color: orange; 
@@ -59,8 +68,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             text-align: center;
             margin-top: 50px;
         }
-        .form-container {
-            background-color: #ff8800;
+        .form-background {
+            background-color: #ff8800; /* Warna orange khas kantor pos */
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
