@@ -5,22 +5,21 @@
     <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Welcome to PosPay</title>
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style.css'); ?>">
+        <link rel="icon" href="<?php echo base_url('assets/img/pospay.png'); ?>" type="image/png">
+        <title>Pospay</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
                 margin: 0;
                 padding: 0;
                 background-image: url('<?php echo base_url('assets/img/background.png'); ?>');
-                /* background-color: #ff8800; Warna orange tua khas kantor pos */
             }
             .navbar {
                 background-color: orange;
                 overflow: hidden;
                 display: flex;
                 align-items: center;
-                height: 75px; /* Tinggi navbar yang lebih tinggi */
+                height: 75px; 
             }
             .navbar ul {
                 list-style-type: none;
@@ -36,9 +35,9 @@
                 display: block;
                 color: white;
                 text-align: center;
-                padding: 25px 20px; /* Padding lebih besar untuk membuat navbar lebih tinggi */
+                padding: 25px 20px; 
                 text-decoration: none;
-                line-height: 40px; /* Menjaga teks tetap di tengah secara vertikal */
+                line-height: 40px; 
                 font-size: 18px;
             }
             .navbar li a:hover {
@@ -46,11 +45,11 @@
                 color: black;
             }
             .navbar li.logout {
-                float: right; /* Membuat tombol logout berada di sebelah kanan */
+                float: right; 
             }
             .navbar .logo {
                 display: block;
-                padding: 15px 25px; /* Menyesuaikan padding untuk logo */
+                padding: 15px 25px;
             }
             #container {
                 padding: 20px;
@@ -58,6 +57,7 @@
             h1 {
                 text-align: center;
                 margin-top: 50px;
+                color: white;
             }
             .carousel {
                 width: 90%;

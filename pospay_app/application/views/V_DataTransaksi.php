@@ -5,8 +5,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Welcome to PosPay</title>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style.css'); ?>">
+    <link rel="icon" href="<?php echo base_url('assets/img/pospay.png'); ?>" type="image/png">
+    <title>Pospay</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             overflow: hidden;
             display: flex;
             align-items: center;
-            height: 75px; /* Tinggi navbar yang lebih tinggi */
+            height: 75px; 
         }
         .navbar ul {
             list-style-type: none;
@@ -34,9 +34,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             display: block;
             color: white;
             text-align: center;
-            padding: 25px 20px; /* Padding lebih besar untuk membuat navbar lebih tinggi */
+            padding: 25px 20px; 
             text-decoration: none;
-            line-height: 40px; /* Menjaga teks tetap di tengah secara vertikal */
+            line-height: 40px; 
             font-size: 18px;
         }
         .navbar li a:hover {
@@ -45,7 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }
         .navbar .logo {
             display: block;
-            padding: 15px 25px; /* Menyesuaikan padding untuk logo */
+            padding: 15px 25px;
         }
         #container {
             padding: 20px;
@@ -70,8 +70,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             font-size: 16px;
             margin: 4px 2px;
             cursor: pointer;
-            border-radius: 10px; /* Menambahkan radius sudut */
-            margin-bottom: 20px; /* Menambahkan jarak dari tombol ke iframe */
+            border-radius: 10px; 
+            margin-bottom: 20px; 
         }
     </style>
 </head>

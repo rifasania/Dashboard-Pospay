@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Welcome to PosPay</title>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style.css'); ?>">
+    <link rel="icon" href="<?php echo base_url('assets/img/pospay.png'); ?>" type="image/png">
+    <title>Pospay</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,7 +11,7 @@
             padding: 0;
         }
         .navbar {
-            background-color: orange; /* Warna orange khas kantor pos */
+            background-color: orange; 
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -55,7 +55,7 @@
             margin-top: 50px;
         }
         .button {
-            background-color: orange; /* Warna orange khas kantor pos */
+            background-color: orange; 
             border: none;
             color: white;
             padding: 15px 25px;
@@ -65,8 +65,8 @@
             font-size: 16px;
             margin: 4px 2px;
             cursor: pointer;
-            border-radius: 10px; /* Menambahkan radius sudut */
-            margin-bottom: 20px; /* Menambahkan jarak dari tombol ke iframe */
+            border-radius: 10px; 
+            margin-bottom: 20px; 
         }
         table {
             width: 80%;
@@ -81,7 +81,7 @@
             text-align: left;
         }
         th {
-            background-color: orange; /* Warna orange khas kantor pos */
+            background-color: orange; 
             color: white;
         }
         .action-button {

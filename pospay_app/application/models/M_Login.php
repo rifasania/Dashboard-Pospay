@@ -15,7 +15,6 @@ class M_Login extends CI_Model {
                 $sess = array (
                     'username' => $row->username, 
                     'password' => $row->password,
-                    // 'id_role' => $row->id_role
                 );
                 $this->session->get_userdata($sess);
                 if($row->id_role == 1) {

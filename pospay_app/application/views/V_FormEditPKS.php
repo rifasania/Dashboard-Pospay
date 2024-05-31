@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Edit Data PKS</title>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style.css'); ?>">
+    <link rel="icon" href="<?php echo base_url('assets/img/pospay.png'); ?>" type="image/png">
+    <title>Pospay</title>
     <style>
         body {
             font-family: Arial, sans-serif;

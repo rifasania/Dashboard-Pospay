@@ -7,9 +7,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <!-- Include Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="<?php echo base_url('assets/img/pospay.png'); ?>" type="image/png">
+    <title>Pospay</title>
     <style>
         body {
             background-color: #f8f9fa;
@@ -34,7 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         .login-container h2 img {
             display: block;
             margin: 0 auto 10px;
-            height: 80px; /* Adjust the height as needed */
+            height: 80px; 
         }
         .login-container input,
         .login-container button {
@@ -43,13 +42,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             margin: 10px 0;
             border: 1px solid #ddd;
             border-radius: 5px;
-            box-sizing: border-box; /* Ensures padding is included in the width */
+            box-sizing: border-box;
         }
         .login-container .password-container {
             position: relative;
         }
         .login-container .password-container input {
-            padding-right: 40px; /* Add padding to make room for the eye icon */
+            padding-right: 40px;
         }
         .login-container .password-container .toggle-password {
             position: absolute;
@@ -59,14 +58,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             cursor: pointer;
         }
         .login-container button {
-            background-color: #ff6600; /* Orange color */
+            background-color: #ff6600; 
             border: none;
             color: white;
             font-size: 16px;
             cursor: pointer;
         }
         .login-container button:hover {
-            background-color: #e65c00; /* Darker shade of orange for hover effect */
+            background-color: #e65c00;
         }
         .login-container .checkbox-container {
             display: flex;
