@@ -35,7 +35,7 @@ class C_DataTransaksi extends CI_Controller {
 		$nama_file = $_FILES['nama_file'];
 		if($nama_file = ''){}else{
 			$config['upload_path'] = './assets/uploads';
-			$config['allowed_types'] = 'xls|xlsx';
+			$config['allowed_types'] = '*';
 
 			$this->load->library('upload', $config);
 			if(!$this->upload->do_upload('nama_file')){
