@@ -5,10 +5,19 @@
     <title>Welcome to PosPay</title>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style.css'); ?>">
     <style>
+		html, body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-image: url('<?php echo base_url('assets/img/background.png'); ?>');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         .navbar {
             background-color: orange; 
@@ -55,7 +64,7 @@
             margin-top: 50px;
         }
         .form-background {
-            background-color: #ff8800; /* Warna orange khas kantor pos */
+            background-color: #ff6600; /* Warna orange khas kantor pos dengan transparansi */
             padding: 30px;
             border-radius: 10px;
             width: 340px; /* Lebar lebih besar dari form */

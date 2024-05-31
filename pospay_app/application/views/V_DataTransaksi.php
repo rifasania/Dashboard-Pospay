@@ -87,7 +87,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div id="container">
         <h1>Data Transaksi</h1>
         <a href="<?php echo site_url('C_DataTransaksi/formAddDataTransaksi');?>" class="button">Tambah Data Transaksi</a>
-        <iframe width="1200" height="1080" src="https://lookerstudio.google.com/embed/reporting/9b2ba553-a178-4dd8-a895-185f2dae0742/page/B8k0D" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+        <iframe width="1366" height="768" src="https://lookerstudio.google.com/embed/reporting/8cdc0914-a13f-4f6d-a90d-755da1177fa3/page/knl1D" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
     </div>
 </body>
 </html>

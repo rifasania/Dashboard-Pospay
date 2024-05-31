@@ -12,6 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #ff8800; /* Warna orange tua khas kantor pos */
         }
         .navbar {
             background-color: orange;
@@ -58,7 +59,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
     <div class="navbar">
-    <span class="logo"><img src="<?php echo base_url('assets/img/pospay.png'); ?>" alt="PosPay Logo" height="60"></span>
+        <span class="logo"><img src="<?php echo base_url('assets/img/pospay.png'); ?>" alt="PosPay Logo" height="60"></span>
         <ul>
             <li><a href="<?php echo site_url('C_Home/index');?>">Home</a></li>
             <li><a href="<?php echo site_url('C_DataTransaksi/index');?>">Data Transaksi</a></li>
