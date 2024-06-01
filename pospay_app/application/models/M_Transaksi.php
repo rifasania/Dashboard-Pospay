@@ -7,4 +7,9 @@ class M_Transaksi extends CI_Model {
     {
         $this->db->insert('file_transaksi', $data);
     }
+
+    public function insert_transaksi($transaksi_data)
+    {
+        $this->db->insert('transaksi', $transaksi_data);
+    }
 }    
