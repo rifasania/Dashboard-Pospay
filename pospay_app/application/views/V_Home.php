@@ -1,7 +1,7 @@
     <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
     ?>
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -20,9 +20,9 @@
             display: flex;
             align-items: center;
             height: 75px;
-        }	
+        }
         .navbar ul {
-            list-style-type: none;
+            list-style-type: none;A
             margin: 0;
             padding: 0;
             display: flex;
