@@ -134,6 +134,13 @@
             background-color: #ddd;
             color: black;
         }
+        .error-message {
+            background-color: #ffcccc;
+            color: #ff0000;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -159,12 +166,24 @@
     <div id="container">
         <h1>Tambah Data Transaksi</h1>
         <div class="form-background">
-            <div class="form-container">
+            <!-- <div class="form-container">
                 <form action="<?php echo site_url('C_DataTransaksi/aksiAddDataTransaksi'); ?>" method="post" enctype="multipart/form-data">                    
                     <h3>Tanggal</h3>
-                    <input type="date" name="tanggal_insert" required>
+                    <input type="date" name="tanggal_insert" value="<?php echo set_value('tanggal_insert', ''); ?>" required>
                     <h3>File Excel</h3>
-                    <input type="file" name="nama_file" required>
+                    <input type="file" name="nama_file" value="<?php echo set_value('nama_file', ''); ?>" required>
+                    <button type="submit" class="button">Submit</button>
+                </form>
+            </div> -->
+            <div class="form-container">
+                <?php if ($this->session->flashdata('error')) : ?>
+                    <div class="error-message"><?php echo $this->session->flashdata('error'); ?></div>
+                <?php endif; ?>
+                <form action="<?php echo site_url('C_DataTransaksi/aksiAddDataTransaksi'); ?>" method="post" enctype="multipart/form-data">                    
+                    <h3>Tanggal</h3>
+                    <input type="date" name="tanggal_insert" value="<?php echo $this->session->flashdata('tanggal_insert') ? $this->session->flashdata('tanggal_insert') : set_value('tanggal_insert', ''); ?>" required>
+                    <h3>File Excel</h3>
+                    <input type="file" name="nama_file" value="<?php echo $this->session->flashdata('nama_file') ? $this->session->flashdata('nama_file') : set_value('nama_file', ''); ?>" required>
                     <button type="submit" class="button">Submit</button>
                 </form>
             </div>

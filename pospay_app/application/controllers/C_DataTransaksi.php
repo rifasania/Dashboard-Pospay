@@ -25,34 +25,45 @@ class C_DataTransaksi extends CI_Controller
 	{
 		$tanggal_insert = $this->input->post('tanggal_insert');
 
-		$nama_file = $_FILES['nama_file'];
-		if ($nama_file = '') {
-		} else {
-			$config['upload_path'] = './assets/uploads';
-			$config['allowed_types'] = '*';
+    	$nama_file = $_FILES['nama_file']['name'];
+    	if ($nama_file != '') {
+    	    $config['upload_path'] = './assets/uploads';
+    	    $config['allowed_types'] = '*';
+    	    $config['file_name'] = $nama_file;
+    	    $config['overwrite'] = true;
+		
+    	    $this->load->library('upload', $config);
+    	    if (!$this->upload->do_upload('nama_file')) {
+    	        $this->session->set_flashdata('error', 'Upload Gagal');
+    	        $this->session->set_flashdata('tanggal_insert', $tanggal_insert);
+    	        $this->session->set_flashdata('nama_file', $nama_file);
+    	        redirect('C_DataTransaksi/formAddDataTransaksi');
+    	    } else {
+    	        $nama_file = $this->upload->data('file_name');
+    	        $full_path = $this->upload->data('full_path');
+    	    }
+    	}
+	
+    	$this->read_file($full_path, $nama_file, $tanggal_insert);
+		// $tanggal_insert = $this->input->post('tanggal_insert');
 
-			$this->load->library('upload', $config);
-			if (!$this->upload->do_upload('nama_file')) {
-				echo "Upload Gagal";
-				die();
-			} else {
-				$nama_file = $this->upload->data('file_name');
-				$full_path = $this->upload->data('full_path');
-			}
-		}
+		// $nama_file = $_FILES['nama_file'];
+		// if ($nama_file = '') {
+		// } else {
+		// 	$config['upload_path'] = './assets/uploads';
+		// 	$config['allowed_types'] = '*';
 
-		// var_dump($tanggal_insert);
-		// die();
+		// 	$this->load->library('upload', $config);
+		// 	if (!$this->upload->do_upload('nama_file')) {
+		// 		echo "Upload Gagal";
+		// 		die();
+		// 	} else {
+		// 		$nama_file = $this->upload->data('file_name');
+		// 		$full_path = $this->upload->data('full_path');
+		// 	}
+		// }
 
-		// $DataInsert = array(
-		// 	'tanggal_insert' => $tanggal_insert,
-		// 	'nama_file' => $nama_file,
-		// );
-
-		$this->read_file($full_path, $nama_file, $tanggal_insert);
-
-		// $this->M_Transaksi->addDataTransaksi($DataInsert);
-		// redirect(site_url('C_DataTransaksi/index'));
+		// $this->read_file($full_path, $nama_file, $tanggal_insert);
 	}
 
 	function read_file($full_path, $filename, $tanggal_insert)
@@ -60,10 +71,6 @@ class C_DataTransaksi extends CI_Controller
 		$html_doc = file_get_contents($full_path);
 		$tanggal = substr($filename, 0, 8);
 		$tanggal_namefile = DateTime::createFromFormat('Ymd', $tanggal)->format('Y-m-d');
-		// echo $tanggal_namefile;
-
-		// var_dump($tanggal_namefile, $tanggal_insert);
-		// die();
 
 		$dom = new DOMDocument;
 		libxml_use_internal_errors(true);
@@ -78,42 +85,71 @@ class C_DataTransaksi extends CI_Controller
 				preg_match("/KRITERIA : (\d{8}) - (\d{8})/", $date_string, $matches);
 				$start_date = DateTime::createFromFormat('Ymd', $matches[1])->format('Y-m-d');
 				$end_date = DateTime::createFromFormat('Ymd', $matches[2])->format('Y-m-d');
-				// echo "Start Date: $start_date, End Date: $end_date";
 			}
 		}
 
 		$errorOccurred = false;
 
+		// if ($tanggal_insert != $tanggal_namefile) {
+		// 	echo "<script>
+		// 			alert('Tanggal yang Anda masukkan tidak sesuai dengan tanggal di nama file');
+		// 			setTimeout(function() {
+		// 				window.location.href = '" . site_url('C_DataTransaksi/formAddDataTransaksi') . "';
+		// 			}, 0);
+		// 		  </script>";
+		// 	$errorOccurred = true;
+		// 	exit;
+		// }
+		
+		// if ($tanggal_namefile != $start_date && $tanggal_namefile != $end_date) {
+		// 	echo "<script>
+		// 			alert('Tanggal di nama file tidak sesuai dengan tanggal di kriteria data transaksi');
+		// 			setTimeout(function() {
+		// 				window.location.href = '" . site_url('C_DataTransaksi/formAddDataTransaksi') . "';
+		// 			}, 0);
+		// 		  </script>";
+		// 	$errorOccurred = true;
+		// 	exit;
+		// }
+		
+		// if ($tanggal_insert != $start_date && $tanggal_insert != $end_date) {
+		// 	echo "<script>
+		// 			alert('Tanggal yang Anda masukkan tidak sesuai dengan tanggal di kriteria data transaksi');
+		// 			setTimeout(function() {
+		// 				window.location.href = '" . site_url('C_DataTransaksi/formAddDataTransaksi') . "';
+		// 			}, 0);
+		// 		  </script>";
+		// 	$errorOccurred = true;
+		// 	exit;
+		// }
+
 		if ($tanggal_insert != $tanggal_namefile) {
-			echo "<script>alert('Tanggal yang Anda masukkan tidak sesuai dengan tanggal di nama file');</script>";
-			$errorOccurred = true;
-
+			$this->session->set_flashdata('error', 'Tanggal yang Anda masukkan tidak sesuai dengan tanggal di nama file');
+			$this->session->set_flashdata('tanggal_insert', $tanggal_insert);
+			$this->session->set_flashdata('nama_file', $nama_file);
+			redirect('C_DataTransaksi/formAddDataTransaksi');
 		}
-
+		
 		if ($tanggal_namefile != $start_date && $tanggal_namefile != $end_date) {
-			echo "<script>alert('Tanggal di nama file tidak sesuai dengan tanggal di kriteria data transaksi');</script>";
-			$errorOccurred = true;
+			$this->session->set_flashdata('error', 'Tanggal di nama file tidak sesuai dengan tanggal di kriteria data transaksi');
+			$this->session->set_flashdata('tanggal_insert', $tanggal_insert);
+			$this->session->set_flashdata('nama_file', $nama_file);
+			redirect('C_DataTransaksi/formAddDataTransaksi');
 		}
-
+		
 		if ($tanggal_insert != $start_date && $tanggal_insert != $end_date) {
-			echo "<script>alert('Tanggal yang Anda masukkan tidak sesuai dengan tanggal di kriteria data transaksi');</script>";
-			$errorOccurred = true;
+			$this->session->set_flashdata('error', 'Tanggal yang Anda masukkan tidak sesuai dengan tanggal di kriteria data transaksi');
+			$this->session->set_flashdata('tanggal_insert', $tanggal_insert);
+			$this->session->set_flashdata('nama_file', $nama_file);
+			redirect('C_DataTransaksi/formAddDataTransaksi');
 		}
 
 		if (!$errorOccurred) {
 
 			$rows = $dom->getElementsByTagName('tr');
 
-			// // Dump each row's HTML content
-			// foreach ($rows as $row) {
-			// 	echo $dom->saveHTML($row);
-			// }
-
-			// return [$tanggal_namefile, $rows];
 			$this->processDataTransaksi($tanggal_namefile, $rows);
-		}
-
-
+		} 
 	}
 
 
@@ -172,7 +208,39 @@ class C_DataTransaksi extends CI_Controller
 		echo "Data insertion complete!\n";
 		redirect(site_url('C_DataTransaksi/index'));
 	}
+}
 
+
+// debugging
+
+		// var_dump($tanggal_insert);
+		// die();
+
+		// $DataInsert = array(
+		// 	'tanggal_insert' => $tanggal_insert,
+		// 	'nama_file' => $nama_file,
+		// );		
+
+		// $this->M_Transaksi->addDataTransaksi($DataInsert);
+		// redirect(site_url('C_DataTransaksi/index'));
+		
+		// echo $tanggal_namefile;
+
+		// var_dump($tanggal_namefile, $tanggal_insert);
+		// die();
+		
+
+				// echo "Start Date: $start_date, End Date: $end_date";		
+				
+
+			// // Dump each row's HTML content
+			// foreach ($rows as $row) {
+			// 	echo $dom->saveHTML($row);
+			// }
+
+			// return [$tanggal_namefile, $rows];
+
+			
 	// public function processDataTransaksi($filename)
 	// {
 	// 	$html_doc = file_get_contents($filename);
@@ -249,4 +317,3 @@ class C_DataTransaksi extends CI_Controller
 
 	// 	echo "Data insertion complete!\n";
 	// }
-}
