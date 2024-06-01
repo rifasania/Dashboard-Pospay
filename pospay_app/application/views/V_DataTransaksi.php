@@ -87,7 +87,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
     <div id="container">
         <h1>Data Transaksi</h1>
-        <a href="<?php echo site_url('C_DataTransaksi/formAddDataTransaksi');?>" class="button">Tambah Data Transaksi</a>
         <iframe width="1366" height="768" src="https://lookerstudio.google.com/embed/reporting/8cdc0914-a13f-4f6d-a90d-755da1177fa3/page/knl1D" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
     </div>
 </body>

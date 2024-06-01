@@ -105,7 +105,6 @@
     </div>
     <div id="container">
         <h1>Data PKS</h1>
-        <a href="<?php echo site_url('C_DataPKS/formAddDataPKS');?>" class="button">Tambah Data PKS</a>
         <table>
             <tr>
                 <th>No</th>
