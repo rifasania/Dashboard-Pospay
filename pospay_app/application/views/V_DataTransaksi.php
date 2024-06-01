@@ -125,7 +125,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
     <div id="container">
         <h1>Data Transaksi</h1>
-        <iframe width="1366" height="768" src="https://lookerstudio.google.com/embed/reporting/8cdc0914-a13f-4f6d-a90d-755da1177fa3/page/knl1D" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+        <iframe width="1366" height="768" src="https://lookerstudio.google.com/embed/reporting/0ac5b3cb-eeb9-44f0-abb9-f0760e9b9c34/page/knl1D" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
     </div>
     <script>
         let dropdownTimeout;
