@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 31 Bulan Mei 2024 pada 03.36
--- Versi server: 10.4.27-MariaDB
--- Versi PHP: 8.2.0
+-- Generation Time: Jun 02, 2024 at 07:51 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `file_transaksi`
+-- Table structure for table `file_transaksi`
 --
 
 CREATE TABLE `file_transaksi` (
@@ -34,7 +34,7 @@ CREATE TABLE `file_transaksi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `file_transaksi`
+-- Dumping data for table `file_transaksi`
 --
 
 INSERT INTO `file_transaksi` (`id_file`, `tanggal_insert`, `nama_file`) VALUES
@@ -43,10 +43,10 @@ INSERT INTO `file_transaksi` (`id_file`, `tanggal_insert`, `nama_file`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `t_pks`
+-- Table structure for table `pks`
 --
 
-CREATE TABLE `t_pks` (
+CREATE TABLE `pks` (
   `id` int(11) NOT NULL,
   `pic` varchar(255) NOT NULL,
   `pks` varchar(255) NOT NULL,
@@ -54,17 +54,17 @@ CREATE TABLE `t_pks` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `t_pks`
+-- Dumping data for table `pks`
 --
 
-INSERT INTO `t_pks` (`id`, `pic`, `pks`, `tanggal_habis`) VALUES
+INSERT INTO `pks` (`id`, `pic`, `pks`, `tanggal_habis`) VALUES
 (1, 'Robby', 'IMFI (SYB)', '2021-06-21'),
 (2, 'Robby', 'PT Pos Finansial Indonesia', '2022-01-01');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -76,7 +76,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `nama_lengkap`, `id_role`) VALUES
@@ -88,41 +88,41 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `nama_lengkap`, `id_role`
 --
 
 --
--- Indeks untuk tabel `file_transaksi`
+-- Indexes for table `file_transaksi`
 --
 ALTER TABLE `file_transaksi`
   ADD PRIMARY KEY (`id_file`);
 
 --
--- Indeks untuk tabel `t_pks`
+-- Indexes for table `pks`
 --
-ALTER TABLE `t_pks`
+ALTER TABLE `pks`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `file_transaksi`
+-- AUTO_INCREMENT for table `file_transaksi`
 --
 ALTER TABLE `file_transaksi`
   MODIFY `id_file` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `t_pks`
+-- AUTO_INCREMENT for table `pks`
 --
-ALTER TABLE `t_pks`
+ALTER TABLE `pks`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
