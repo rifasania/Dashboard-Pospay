@@ -150,7 +150,7 @@
             <li><a href="<?php echo site_url('C_Home/index');?>">Home</a></li>
             <li onmouseenter="showDropdown(this, event)" onmouseleave="hideDropdown(this)"><a href="#">Dashboard</a>
                 <ul>
-                    <li><a href="<?php echo site_url('C_DataTransaksi/index'); ?>">Lihat Data Transaksi</a></li>
+                    <li><a href="<?php echo site_url('C_DataTransaksi/index'); ?>">Lihat Dashboard</a></li>
                     <li><a href="<?php echo site_url('C_DataTransaksi/formAddDataTransaksi'); ?>">Tambah Data Transaksi</a></li>
                 </ul>
             </li>
