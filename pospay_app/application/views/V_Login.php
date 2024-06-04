@@ -79,6 +79,11 @@
         .login-container .forgot-password {
             text-align: right;
         }
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -87,6 +92,9 @@
             <img src="<?php echo base_url('assets/img/pospay.png'); ?>" alt="Logo">
             Login
         </h2>
+        <?php if ($this->session->flashdata('error')) : ?>
+            <div class="error-message"><?php echo $this->session->flashdata('error'); ?></div>
+        <?php endif; ?>
         <form action="<?php echo site_url('C_Login/CekLogin')?>" method="post" name="login">
             <input type="text" name="username" placeholder="Username" required>
             <div class="password-container">

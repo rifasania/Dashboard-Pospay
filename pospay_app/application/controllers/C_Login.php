@@ -5,6 +5,7 @@ class C_Login extends CI_Controller {
 	
 	public function index() 
 	{
+		$data['error'] = $this->session->flashdata('error');
 		$this->load->view('V_Login');
 	}
 
@@ -16,7 +17,7 @@ class C_Login extends CI_Controller {
 
 	
     public function logout() {
-        $this->session->set_userdata('username', FALSE);
+        $this->session->unset_userdata('username');
         $this->session->sess_destroy();
         redirect(site_url('C_Login/index'));
     }

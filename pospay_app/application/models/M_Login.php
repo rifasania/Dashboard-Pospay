@@ -16,19 +16,14 @@ class M_Login extends CI_Model {
                     'username' => $row->username, 
                     'password' => $row->password,
                 );
-                $this->session->get_userdata($sess);
-                if($row->id_role == 1) {
-                    redirect('C_Home/index');
-                } 
-                else if($row->id_role == 2) {
-                    redirect('C_Home/index');
-                }
+                $this->session->set_userdata($sess);
+                redirect('C_Home/index');
             }
             
         }
         else
         {            
-            $this->session->set_flashdata('info', 'Maaf! Username dan Password Salah!');
+            $this->session->set_flashdata('error', 'Maaf! Username dan Password Salah!');
             redirect('C_Login/index');
         }
     }

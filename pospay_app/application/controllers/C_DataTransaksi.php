@@ -3,10 +3,15 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class C_DataTransaksi extends CI_Controller
-{
+{	
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->helper('url');
+        $this->load->library('session');
+        if (!$this->session->userdata('username')) {
+            redirect('C_Login/index');
+        }
 		$this->load->model('M_Transaksi');
 		$this->load->model('M_Mitra');
 	}
